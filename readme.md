@@ -1,8 +1,7 @@
-# Semana 10 - Introdução ao Sequelize
 
 ## Rodar o repositório:
 
-### Na primeira vez é necessário instalar as dependencias:
+### Na primeira vez é necessário instalar as dependências:
 1. `npm install`
 2. Se for em ambiente local: `npm install --dev`
 3. `cp .env_example .env`
@@ -15,9 +14,11 @@
 ### Criar uma migration
 1. `sequelize migration:generate --name alter_table_adicionar_login_alunos`
 2. `npx sequelize-cli migration:generate --name criar_tabela_alunos`
+
 ### Rodar uma migration. Opções:
-1. Opção nº 1: `npm`
-2. Opção nº 2: `npx sequelize db:migrate`
+1. Opção nº 1: `sequelize db:migrate`
+2. Opção nº 2: `npx sequelize-cli db:migrate`
+
 
 ### Reverter a última migration:
 1. `sequelize-cli db:migrate:undo`
@@ -39,5 +40,3 @@ https://sequelize.org/docs/v6/core-concepts/model-basics/
 ### instalar o JsonWebToken ( JWT )
 `npm install jsonwebtoken`
 
-npx sequelize-cli migration:generate --name create-user
-npx sequelize-cli db:migrate
