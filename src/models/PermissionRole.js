@@ -15,8 +15,8 @@ const PermissionRole = connection.define("permissionsRole", {
             model: Permission,
             key: 'id'
         }
-    },
-roleId: {
+    }, 
+    roleId: {
         type: DataTypes.INTEGER,
         references: {
             model: Role,

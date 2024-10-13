@@ -2,7 +2,7 @@ const { connection } = require("../database/connection")
 const {DataTypes} = require("sequelize")
 
 const User = connection.define('user', {
-    name: {
+    nome: {
         type: DataTypes.STRING
     },
     email: {
