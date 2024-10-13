@@ -1,1 +1,0 @@
-Nesta pasta terá toda a estrutura do nosso banco de dados.

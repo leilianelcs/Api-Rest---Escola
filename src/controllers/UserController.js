@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 
 class UserController {
     async findAll(request, response) {
-        const data = await User.findAll({attributes: ['id', 'name', 'email'], include: {association: 'roles', attributes: ['id', 'description']}})
+        const data = await User.findAll({attributes: ['id', 'nome', 'email'], include: {association: 'roles', attributes: ['id', 'description']}})
         const total = await User.count()
 
         return response.status(200).send({ records: data, total })
@@ -11,7 +11,7 @@ class UserController {
 
     async findById(request, response) {
         const { id } = request.params
-        const data = await User.findByPk(id, {select: ['id', 'name', 'email']})
+        const data = await User.findByPk(id, {select: ['id', 'nome', 'email']})
 
         if (!data) {
             return response.status(404).send({ message: "Usuário não encontrado" })
@@ -22,7 +22,7 @@ class UserController {
 
     async createNewUser(request, response) {
         try {
-            const { email, name, password } = request.body
+            const { email, nome, password } = request.body
             if (!email || !password) {
                 return response.status(400).send({ message: "O email e a senha são obrigatórios" })
             }
@@ -36,7 +36,7 @@ class UserController {
 
             const data = await User.create({
                 email,
-                name,
+                nome,
                 password: senhaEncriptada
             })
 
@@ -50,7 +50,7 @@ class UserController {
     async updateUser(request, response) {
         try {
             const { id } = request.params
-            const { email, name, password } = request.body
+            const { email, nome, password } = request.body
 
             const user = await User.findByPk(id)
             if (!user) {
@@ -59,7 +59,7 @@ class UserController {
 
             const data = await user.update({
                 email,
-                name,
+                nome,
                 password
             })
 

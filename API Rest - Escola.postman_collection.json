@@ -1,0 +1,606 @@
+{
+	"info": {
+		"_postman_id": "07583d35-94af-4516-aae6-841a86058752",
+		"name": "API Rest - Escola",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15097938",
+		"_collection_link": "https://dark-meteor-213825.postman.co/workspace/OMS~9c950994-f9e6-474a-9be6-e882c879ec67/collection/15097938-07583d35-94af-4516-aae6-841a86058752?action=share&source=collection_link&creator=15097938"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"bruno@email.com\",\r\n  \"password\": \"bruno123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "usuario-get",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJicnVub0BlbWFpbC5jb20iLCJyb2xlcyI6W10sImlhdCI6MTcyNDM3NDQ3NSwiZXhwIjoxNzI0Mzc4MDc1fQ.Msoqjo9ViCxH9bWdrrncsjDUns1ogs421dHd1L7ra04",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "locais-user_id-get",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImVtYWlsIjoidGlhZ28uZXhlbXBsb0Bob3RtYWlsLmNvbSIsIm5vbWUiOiJUaWFnbyBBcmF1am8iLCJpYXQiOjE3MjM1NDk1MzJ9.nEPN3e_qORfS6mQ2NBqUXJD0cY6h2ioqMLCAh95EHw0",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"tiago.exemplo@hotmail.com\",\r\n  \"senha\": \"tiago123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/local?usuario_Id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"local"
+					],
+					"query": [
+						{
+							"key": "usuario_Id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post-locais",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImVtYWlsIjoidGlhZ28uZXhlbXBsb0Bob3RtYWlsLmNvbSIsIm5vbWUiOiJUaWFnbyBBcmF1am8iLCJpYXQiOjE3MjM1NTAzNzV9.X4B38P8wrZoVqt9MNujWWbID2qCpcTIXGx8xTjqy9FY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"Trilha Morro das aranhas 2\",\r\n  \"descricao\": \"Trilha de aproximadamente 45 min de subida, com uma vista para as praias do Santinho, Moçambique e Ingleses\",\r\n  \"cep\": \"88058-700\",\r\n  \"pratica_esportiva\": \"Caminhada\",\r\n  \"usuarioId\": \"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/local",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"local"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post-usuarios",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJicnVub0BlbWFpbC5jb20iLCJyb2xlcyI6W3siaWQiOjEsImRlc2NyaXB0aW9uIjoiYWRtaW4iLCJjcmVhdGVkQXQiOiIyMDI0LTA4LTIzVDAwOjQ2OjI1Ljc0N1oiLCJ1cGRhdGVkQXQiOiIyMDI0LTA4LTIzVDAwOjQ3OjUxLjU2N1oiLCJwZXJtaXNzaW9ucyI6W3siaWQiOjEsImRlc2NyaXB0aW9uIjoiY3JpYXJfdXN1YXJpbyIsImNyZWF0ZWRBdCI6IjIwMjQtMDgtMjNUMDA6NDY6MjUuODA3WiIsInVwZGF0ZWRBdCI6IjIwMjQtMDgtMjNUMDA6NDg6MzYuNzc0WiJ9LHsiaWQiOjIsImRlc2NyaXB0aW9uIjoibGVyX3VzdWFyaW9zIiwiY3JlYXRlZEF0IjoiMjAyNC0wOC0yM1QwMDo0NjoyNS44MDdaIiwidXBkYXRlZEF0IjoiMjAyNC0wOC0yM1QwMDo0ODo0OS40MjJaIn1dfV0sImlhdCI6MTcyNDM3NDcyOCwiZXhwIjoxNzI0Mzc4MzI4fQ.P7dDJXzs5yMe3T3RN-TaF_Z-L5zTSYGhqkKO9XRgAaY",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"ricardo\",\r\n  \"email\": \"ricardo@email.com\",\r\n  \"password\": \"ricardo123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post-create-role",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBlbWFpbC5jb20iLCJpYXQiOjE3MjQxMTY0MzEsImV4cCI6MTcyNDEyMDAzMX0.8bKbteBE6oaxLHWPueSfm63iheEGHujCQgvgbONt-Zg",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"description\": \"professor\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/rbac/createOneRole",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rbac",
+						"createOneRole"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post-create-permission",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBlbWFpbC5jb20iLCJpYXQiOjE3MjQxMTY0MzEsImV4cCI6MTcyNDEyMDAzMX0.8bKbteBE6oaxLHWPueSfm63iheEGHujCQgvgbONt-Zg",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"description\": \"atualizar_usuario\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/rbac/createOnePermission",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rbac",
+						"createOnePermission"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post-add-permission-To-Role",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBlbWFpbC5jb20iLCJpYXQiOjE3MjQxMTY0MzEsImV4cCI6MTcyNDEyMDAzMX0.8bKbteBE6oaxLHWPueSfm63iheEGHujCQgvgbONt-Zg",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"roleId\": \"Emanuela\",\r\n  \"email\": \"emanuela@email.com\",\r\n  \"senha\": \"manu123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/rbac/addPermissionToRole",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rbac",
+						"addPermissionToRole"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post-add-Role-To-User",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBlbWFpbC5jb20iLCJpYXQiOjE3MjQxMTY0MzEsImV4cCI6MTcyNDEyMDAzMX0.8bKbteBE6oaxLHWPueSfm63iheEGHujCQgvgbONt-Zg",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"roleId\": 2,\r\n  \"userId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/rbac/addRoleToUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rbac",
+						"addRoleToUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-list-roles",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBlbWFpbC5jb20iLCJpYXQiOjE3MjQxMTY0MzEsImV4cCI6MTcyNDEyMDAzMX0.8bKbteBE6oaxLHWPueSfm63iheEGHujCQgvgbONt-Zg",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"Emanuela\",\r\n  \"email\": \"emanuela@email.com\",\r\n  \"senha\": \"manu123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/rbac/listRoles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rbac",
+						"listRoles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-listRolesByUser",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBlbWFpbC5jb20iLCJpYXQiOjE3MjQxMTY0MzEsImV4cCI6MTcyNDEyMDAzMX0.8bKbteBE6oaxLHWPueSfm63iheEGHujCQgvgbONt-Zg",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"Emanuela\",\r\n  \"email\": \"emanuela@email.com\",\r\n  \"senha\": \"manu123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/rbac/listRolesByUser/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rbac",
+						"listRolesByUser",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-listPermissionsByRole",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBlbWFpbC5jb20iLCJpYXQiOjE3MjQxMTY0MzEsImV4cCI6MTcyNDEyMDAzMX0.8bKbteBE6oaxLHWPueSfm63iheEGHujCQgvgbONt-Zg",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/rbac/listPermissionsByRole/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rbac",
+						"listPermissionsByRole",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-list-permissions",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBlbWFpbC5jb20iLCJpYXQiOjE3MjQxMTY0MzEsImV4cCI6MTcyNDEyMDAzMX0.8bKbteBE6oaxLHWPueSfm63iheEGHujCQgvgbONt-Zg",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"Emanuela\",\r\n  \"email\": \"emanuela@email.com\",\r\n  \"senha\": \"manu123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/rbac/listPermissions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rbac",
+						"listPermissions"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

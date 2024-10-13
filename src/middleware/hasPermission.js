@@ -1,4 +1,6 @@
 const jwt = require("jsonwebtoken")
+const PermissionRole = require("../models/PermissionRole")
+const Permission = require("../models/Permission")
 
 function hasPermission(permissions) {
     return async (request, response, next) => {
